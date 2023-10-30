@@ -24,6 +24,15 @@ public class Employee {
 
     }
 
+    public void punchIn(){
+
+
+    }
+    public void punchOut(){
+
+
+    }
+
 
 
 }

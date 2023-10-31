@@ -5,38 +5,33 @@ public class Reservation {
     private String roomType;
     private double price;
     private int numberOfNights;
-    private boolean weekend;
+    private boolean isWeekend;
 
 //boa constructor
-    public Reservation(String roomType, double price, int numberOfNights, boolean weekend) {
+    public Reservation(String roomType, int numberOfNights, boolean isWeekend) {
         this.roomType = roomType;
-        this.price = price;
         this.numberOfNights = numberOfNights;
-        this.weekend = weekend;
+        this.isWeekend = isWeekend;
     }
-    private double reservationTotal;
 
     //getters
 
     public String getRoomType() {
-        return roomType;
+        return this.roomType;
     }
 
     public double getPrice() {
-        return price;
+        return this.price;
     }
 
     public int getNumberOfNights() {
-        return numberOfNights;
+        return this.numberOfNights;
     }
 
     public boolean isWeekend() {
-        return weekend;
+        return this.isWeekend;
     }
 
-    public double getReservationTotal() {
-        return reservationTotal;
-    }
     //setters
     public void setRoomType(String roomType) {
         this.roomType = roomType;
@@ -46,7 +41,25 @@ public class Reservation {
         this.numberOfNights = numberOfNights;
     }
 
-    public void setWeekend(boolean weekend) {
-        this.weekend = weekend;
+    public void isWeekend(boolean weekend) {
+        this.isWeekend = weekend;
     }
+
+    //getter for Reservation Total
+    public double getReservationTotal() {
+        double reservationTotal;
+        if(this.roomType.equalsIgnoreCase("King")) {
+            this.price = 139.00;
+        } else {
+            this.price = 124.00;
+        }
+        if(this.isWeekend()) {
+            double roomPrice = this.price * this.numberOfNights;
+            reservationTotal = (roomPrice * .10) + roomPrice;
+        } else {
+            reservationTotal = this.price * this.numberOfNights;
+        }
+        return reservationTotal;
+    }
+
 }

@@ -9,6 +9,14 @@ public class Room {
     private boolean isDirty;
     private boolean isAvailable;
 
+    public Room(int numberOfBeds, double price) {
+        this.numberOfBeds = numberOfBeds;
+        this.price = price;
+        this.isOccupied = false;
+        this.isDirty = false;
+        this.isAvailable = true;
+    }
+
     public int getNumberOfBeds() {
         return this.numberOfBeds;
     }
@@ -42,6 +50,7 @@ public class Room {
 
     //guest checks out and room is waiting to be cleaned, not available
     public void checkOut(){
+
         this.isOccupied =false;
     }
 

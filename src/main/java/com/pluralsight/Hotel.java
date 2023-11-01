@@ -51,14 +51,3 @@ public class Hotel {
 
 
 
-
-
-
-
-
-
-
-
-
-
-}
